@@ -1,0 +1,30 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>body  {
+    background-image: url("/rome.webp");
+    background-size: cover;
+    <link rel="stylesheet" href="/stylesheets/welcome.css" />
+  } </style>
+  <div class="topnav">
+  <a class="active" href="#home">Home</a>
+ 
+  <a href="#news">Log In</a>
+ 
+  <%=link_to "Sign Up", new_client_path %>
+  <a href="#about">Log Out</a>
+</div>
+<h1 class="glow">MK Tours</h1>
+
+
+<%=form_for @client do |f| %>
+    
+    <p>  <%= f.label  :name %>
+     <%=f.text_field :name %>
+     </p>
+     <p> <%= f.label :spending_money %> <br>
+      <%=f.number_field :spending_money %>
+      </p>
+     
+      <p><h2>Email:</h2><%= f.text_field :email %></p>
+      <h2>Password:</h2><%= f.text_field :password %><br>
+     <h2>Password Conformation:</h2><%= f.text_field :password_conformation %><br>
+       <%= f.submit %>
